@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+.body {
+font-family: 'Inter', sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Custom Iconify stroke width override */
+.iconify {
+stroke-width: 1.5px !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Hide scrollbar for clean look */
+.no-scrollbar::-webkit-scrollbar {
+display: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.no-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
 }
-
-.App-link {
-  color: #61dafb;
+/* Subtle fade up animation */
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.animate-fade-up {
+animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+/* Gradient Mesh Background */
+.mesh-bg {
+background-color: #ffffff;
+background-image:
+radial-gradient(at 0% 0%, hsla(217,91%,95%,1) 0px, transparent 50%),
+radial-gradient(at 100% 0%, hsla(215,90%,96%,1) 0px, transparent 50%),
+radial-gradient(at 100% 100%, hsla(210,100%,96%,1) 0px, transparent 50%);
+background-attachment: fixed;
 }
