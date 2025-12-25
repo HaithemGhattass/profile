@@ -5,7 +5,7 @@ const SectionHeader = ({ title, linkText = "View all" }) => (
       {title}
     </h2>
     <a
-      href="#"
+      href="/projects"
       className="text-sm font-medium text-slate-500 hover:text-blue-600 flex items-center gap-1"
     >
       {linkText}{" "}

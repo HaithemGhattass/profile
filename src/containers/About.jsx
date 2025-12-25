@@ -5,12 +5,12 @@ import ContactCard from "../components/ContactCard";
 const About = () => {
   const profileData = {
     name: "Haithem Developer",
-    location: "San Francisco, CA",
+    location: "Tunisia, TN",
     bio: [
       "I have over 5 years of experience building digital products. My journey started with a love for design, which naturally evolved into fullstack engineering. I believe the best applications are those that feel invisible—where the user interface anticipates needs before they arise.",
       "Currently, I'm focused on building accessible, high-performance web applications using the modern React ecosystem. When I'm not coding, you can find me hiking or contributing to open source."
     ],
-    email: "hello@Haithem.dev"
+    email: "haithemghattas@gmail.com"
   };
 
   return (
