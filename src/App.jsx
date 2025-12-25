@@ -4,7 +4,7 @@ import Hero from "./containers/Hero";
 import Work from "./containers/Work";
 import Stack from "./containers/Stack";
 import About from "./containers/About";
-import Footer from "./components/Footer";
+import Footer from "./containers/Footer";
 
 function App() {
   const workRef = useRef(null);
