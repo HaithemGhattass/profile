@@ -1,137 +1,17 @@
 import React, { forwardRef } from "react";
+import FeaturedProject from "../components/FeaturedProject";
+import EcommerceProject from "../components/EcommerceProject";
+import DesignSystemProject from "../components/DesignS";
+import SectionHeader from "../components/SectionHeader";
 const Work = forwardRef((props, ref) => {
   return (
     <section ref={ref} id="work" className="mb-32 scroll-mt-28">
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-          Selected Work
-        </h2>
-        <a
-          href="#"
-          className="text-sm font-medium text-slate-500 hover:text-blue-600 flex items-center gap-1"
-        >
-          View all{" "}
-          <span
-            className="iconify"
-            data-icon="lucide:arrow-right"
-            data-width="14"
-          ></span>
-        </a>
-      </div>
-
+      <SectionHeader title="Selected Work" />
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="group relative md:col-span-2 h-100 bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500">
-          <div className="absolute top-8 left-8 z-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur border border-slate-200 text-xs font-medium text-slate-600 mb-3">
-              <span
-                className="iconify text-blue-500"
-                data-icon="lucide:layout-template"
-                data-width="14"
-              ></span>
-              SaaS Dashboard
-            </div>
-            <h3 className="text-3xl font-semibold tracking-tight text-slate-900">
-              Analytics Pro
-            </h3>
-            <p className="text-slate-500 text-base mt-2 max-w-md">
-              A real-time data visualization platform handling millions of
-              events with WebSocket integration.
-            </p>
-          </div>
-
-          <div className="absolute top-40 left-8 right-8 bottom-0 bg-slate-50 rounded-t-xl border-t border-l border-r border-slate-200 shadow-sm overflow-hidden group-hover:-translate-y-2.5 transition-transform duration-500">
-            <div className="w-full h-full p-6">
-              <div className="flex gap-4 mb-4">
-                <div className="w-1/3 h-24 rounded-lg bg-white border border-slate-100 shadow-sm p-3">
-                  <div className="w-8 h-8 rounded bg-blue-50 mb-2"></div>
-                  <div className="w-16 h-2 rounded bg-slate-100"></div>
-                </div>
-                <div className="w-1/3 h-24 rounded-lg bg-white border border-slate-100 shadow-sm p-3">
-                  <div className="w-8 h-8 rounded bg-green-50 mb-2"></div>
-                  <div className="w-16 h-2 rounded bg-slate-100"></div>
-                </div>
-                <div className="w-1/3 h-24 rounded-lg bg-white border border-slate-100 shadow-sm p-3">
-                  <div className="w-8 h-8 rounded bg-purple-50 mb-2"></div>
-                  <div className="w-16 h-2 rounded bg-slate-100"></div>
-                </div>
-              </div>
-              <div className="w-full h-64 rounded-lg bg-white border border-slate-100 shadow-sm p-4 flex items-end gap-2">
-                <div className="w-full h-[40%] bg-blue-100 rounded-sm"></div>
-                <div className="w-full h-[60%] bg-blue-200 rounded-sm"></div>
-                <div className="w-full h-[30%] bg-blue-100 rounded-sm"></div>
-                <div className="w-full h-[80%] bg-blue-500 rounded-sm"></div>
-                <div className="w-full h-[50%] bg-blue-200 rounded-sm"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="group h-87.5 bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden relative hover:border-blue-200 hover:shadow-md transition-all duration-300">
-          <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-            <span
-              className="iconify w-64 h-64 text-slate-400"
-              data-icon="lucide:shopping-bag"
-            ></span>
-          </div>
-          <div className="relative z-10 p-8 h-full flex flex-col justify-between">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-medium text-slate-600 mb-3">
-                <span
-                  className="iconify text-purple-500"
-                  data-icon="lucide:smartphone"
-                  data-width="14"
-                ></span>
-                React Native
-              </div>
-              <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
-                E-commerce App
-              </h3>
-              <p className="text-slate-500 text-sm mt-2">
-                Mobile application with complex gesture handling.
-              </p>
-            </div>
-          </div>
-          <div className="absolute right-0 bottom-0 w-2/3 h-3/4 bg-white rounded-tl-2xl border-t border-l border-slate-200 shadow-sm translate-y-4 translate-x-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500 p-4">
-            <div className="w-full h-8 rounded-full bg-slate-50 mb-4 flex items-center px-3">
-              <div className="w-4 h-4 rounded-full bg-slate-200"></div>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <div className="h-20 bg-slate-50 rounded-lg"></div>
-              <div className="h-20 bg-slate-50 rounded-lg"></div>
-              <div className="h-20 bg-slate-50 rounded-lg"></div>
-              <div className="h-20 bg-slate-50 rounded-lg"></div>
-            </div>
-          </div>
-        </div>
-
-        <div className="group h-87.5 bg-white rounded-3xl border border-slate-200 overflow-hidden relative hover:border-blue-200 hover:shadow-md transition-all duration-300">
-          <div className="p-8">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-600 mb-3">
-              <span
-                className="iconify text-orange-500"
-                data-icon="lucide:figma"
-                data-width="14"
-              ></span>
-              Design System
-            </div>
-            <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Flux UI Kit
-            </h3>
-            <p className="text-slate-500 text-sm mt-2">
-              A comprehensive component library for enterprise apps.
-            </p>
-          </div>
-          <div className="absolute left-8 right-8 bottom-8 h-40 flex gap-3">
-            <div className="flex-1 flex flex-col gap-3 group-hover:-translate-y-2 transition-transform duration-500 delay-75">
-              <div className="h-10 rounded-lg bg-blue-600 shadow-lg shadow-blue-500/20"></div>
-              <div className="h-10 rounded-lg bg-slate-100 border border-slate-200"></div>
-              <div className="h-10 rounded-lg bg-white border border-slate-200 border-dashed"></div>
-            </div>
-            <div className="flex-1 flex flex-col gap-3 group-hover:-translate-y-4 transition-transform duration-500 delay-100">
-              <div className="h-full rounded-lg bg-slate-900"></div>
-            </div>
-          </div>
-        </div>
+        <FeaturedProject />
+        <EcommerceProject />
+        <DesignSystemProject />
       </div>
     </section>
   );
