@@ -20,7 +20,7 @@ const Work = forwardRef((props, ref) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="group relative md:col-span-2 h-[400px] bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500">
+        <div className="group relative md:col-span-2 h-100 bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500">
           <div className="absolute top-8 left-8 z-10">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur border border-slate-200 text-xs font-medium text-slate-600 mb-3">
               <span
@@ -39,7 +39,7 @@ const Work = forwardRef((props, ref) => {
             </p>
           </div>
 
-          <div className="absolute top-40 left-8 right-8 bottom-0 bg-slate-50 rounded-t-xl border-t border-l border-r border-slate-200 shadow-sm overflow-hidden group-hover:translate-y-[-10px] transition-transform duration-500">
+          <div className="absolute top-40 left-8 right-8 bottom-0 bg-slate-50 rounded-t-xl border-t border-l border-r border-slate-200 shadow-sm overflow-hidden group-hover:-translate-y-2.5 transition-transform duration-500">
             <div className="w-full h-full p-6">
               <div className="flex gap-4 mb-4">
                 <div className="w-1/3 h-24 rounded-lg bg-white border border-slate-100 shadow-sm p-3">
@@ -66,7 +66,7 @@ const Work = forwardRef((props, ref) => {
           </div>
         </div>
 
-        <div className="group h-[350px] bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden relative hover:border-blue-200 hover:shadow-md transition-all duration-300">
+        <div className="group h-87.5 bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden relative hover:border-blue-200 hover:shadow-md transition-all duration-300">
           <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
             <span
               className="iconify w-64 h-64 text-slate-400"
@@ -104,7 +104,7 @@ const Work = forwardRef((props, ref) => {
           </div>
         </div>
 
-        <div className="group h-[350px] bg-white rounded-3xl border border-slate-200 overflow-hidden relative hover:border-blue-200 hover:shadow-md transition-all duration-300">
+        <div className="group h-87.5 bg-white rounded-3xl border border-slate-200 overflow-hidden relative hover:border-blue-200 hover:shadow-md transition-all duration-300">
           <div className="p-8">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-600 mb-3">
               <span
