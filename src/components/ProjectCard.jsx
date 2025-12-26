@@ -1,6 +1,9 @@
 import React from "react";
-const ProjectCard = ({ project }) => (
-  <div className="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500">
+const ProjectCard = ({ project, onClick }) => (
+  <div
+    onClick={onClick}
+    className="group bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 cursor-pointer"
+  >
     <div className="p-8">
       <div className="flex items-start justify-between mb-4">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-600">
@@ -34,31 +37,13 @@ const ProjectCard = ({ project }) => (
         ))}
       </div>
 
-      <div className="flex items-center gap-3">
-        <a
-          href={project.liveUrl}
-          className="flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700"
-        >
-          View Project
-          <span
-            className="iconify"
-            data-icon="lucide:arrow-up-right"
-            data-width="14"
-          ></span>
-        </a>
-        {project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            className="flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-slate-700"
-          >
-            <span
-              className="iconify"
-              data-icon="lucide:github"
-              data-width="16"
-            ></span>
-            Code
-          </a>
-        )}
+      <div className="flex items-center gap-2 text-sm font-medium text-blue-600">
+        View Details
+        <span
+          className="iconify group-hover:translate-x-1 transition-transform"
+          data-icon="lucide:arrow-right"
+          data-width="14"
+        ></span>
       </div>
     </div>
 

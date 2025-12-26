@@ -1,6 +1,7 @@
 import { useState } from "react";
 import FilterButton from "../components/FilterButton";
 import ProjectCard from "../components/ProjectCard";
+import ProjectDetailModal from "./ProjectDetailModal";
 
 
 
@@ -20,6 +21,18 @@ const projectsData = [
     previewIcon: "lucide:bar-chart-3",
     featured: true,
     filter: "web",
+    timeline: "6 months",
+    role: "Lead Frontend Developer",
+    teamSize: "Team of 5",
+    features: [
+      "Real-time data streaming with WebSocket connections",
+      "Interactive charts and visualizations using D3.js",
+      "Custom dashboard builder with drag-and-drop",
+      "Advanced filtering and data export capabilities",
+      "Multi-tenant architecture with role-based access",
+    ],
+    challenges:
+      "The main challenge was optimizing performance for real-time data updates. We implemented virtual scrolling and data chunking to handle millions of data points without compromising user experience. WebSocket reconnection logic was crucial for maintaining stable connections.",
   },
   {
     id: 2,
@@ -35,6 +48,18 @@ const projectsData = [
     previewIcon: "lucide:shopping-bag",
     featured: true,
     filter: "mobile",
+    timeline: "4 months",
+    role: "Mobile Developer",
+    teamSize: "Team of 3",
+    features: [
+      "Seamless checkout experience with Stripe integration",
+      "Product search with filters and recommendations",
+      "Push notifications for orders and promotions",
+      "Offline mode with local data persistence",
+      "Custom animations and gesture controls",
+    ],
+    challenges:
+      "Creating a smooth, native-feeling experience across iOS and Android was challenging. We spent significant time optimizing animations and implementing platform-specific features while maintaining code reusability.",
   },
   {
     id: 3,
@@ -50,6 +75,18 @@ const projectsData = [
     previewIcon: "lucide:palette",
     featured: true,
     filter: "web",
+    timeline: "8 months",
+    role: "Design System Lead",
+    teamSize: "Team of 4",
+    features: [
+      "50+ fully accessible React components",
+      "Comprehensive Storybook documentation",
+      "Dark mode support out of the box",
+      "Customizable theme system",
+      "TypeScript definitions for all components",
+    ],
+    challenges:
+      "Balancing flexibility with consistency was key. We created a token-based design system that allows customization while ensuring components remain visually cohesive across different implementations.",
   },
   {
     id: 4,
@@ -65,6 +102,18 @@ const projectsData = [
     previewIcon: "lucide:list-checks",
     featured: false,
     filter: "web",
+    timeline: "5 months",
+    role: "Full-stack Developer",
+    teamSize: "Solo Project",
+    features: [
+      "Kanban and list views for task organization",
+      "Real-time collaboration with team members",
+      "Project templates and recurring tasks",
+      "Time tracking and productivity analytics",
+      "Email notifications and reminders",
+    ],
+    challenges:
+      "Implementing real-time collaboration without overwhelming the database was tricky. We used optimistic updates and careful state management to create a responsive experience.",
   },
   {
     id: 5,
@@ -80,6 +129,18 @@ const projectsData = [
     previewIcon: "lucide:sun",
     featured: false,
     filter: "mobile",
+    timeline: "2 months",
+    role: "Mobile Developer",
+    teamSize: "Solo Project",
+    features: [
+      "7-day weather forecast with hourly details",
+      "Interactive radar maps and animations",
+      "Location-based weather alerts",
+      "Beautiful weather visualizations",
+      "Widget support for home screen",
+    ],
+    challenges:
+      "Integrating mapping libraries while keeping the app performant on older devices required careful optimization and lazy loading strategies.",
   },
   {
     id: 6,
@@ -95,6 +156,18 @@ const projectsData = [
     previewIcon: "lucide:layout-grid",
     featured: false,
     filter: "web",
+    timeline: "4 months",
+    role: "Full-stack Developer",
+    teamSize: "Team of 2",
+    features: [
+      "Drag-and-drop page builder",
+      "15+ professional themes",
+      "Custom domain support",
+      "Built-in analytics dashboard",
+      "SEO optimization tools",
+    ],
+    challenges:
+      "Building a flexible page builder that outputs clean, performant code required careful architecture planning and extensive testing across different use cases.",
   },
   {
     id: 7,
@@ -110,6 +183,18 @@ const projectsData = [
     previewIcon: "lucide:heart-pulse",
     featured: false,
     filter: "mobile",
+    timeline: "3 months",
+    role: "Mobile Developer",
+    teamSize: "Solo Project",
+    features: [
+      "Workout logging with exercise library",
+      "Nutrition tracking with barcode scanner",
+      "Progress photos and measurements",
+      "Apple Health and Google Fit integration",
+      "Personalized workout recommendations",
+    ],
+    challenges:
+      "Integrating with native health APIs while maintaining cross-platform compatibility was complex, requiring platform-specific modules and careful data synchronization.",
   },
   {
     id: 8,
@@ -125,6 +210,18 @@ const projectsData = [
     previewIcon: "lucide:newspaper",
     featured: false,
     filter: "web",
+    timeline: "3 months",
+    role: "Full-stack Developer",
+    teamSize: "Solo Project",
+    features: [
+      "Markdown and MDX content support",
+      "Built-in SEO optimization",
+      "Comment system with moderation",
+      "RSS feed generation",
+      "Analytics and engagement metrics",
+    ],
+    challenges:
+      "Creating a fast, SEO-friendly platform while supporting rich content required careful use of Next.js static generation and incremental static regeneration.",
   },
   {
     id: 9,
@@ -140,10 +237,24 @@ const projectsData = [
     previewIcon: "lucide:utensils",
     featured: false,
     filter: "web",
+    timeline: "2 months",
+    role: "Frontend Developer",
+    teamSize: "Solo Project",
+    features: [
+      "Search by ingredients you have",
+      "Save favorite recipes",
+      "Generate shopping lists",
+      "Nutritional information display",
+      "Weekly meal planner",
+    ],
+    challenges:
+      "Managing API rate limits while providing a smooth user experience required implementing smart caching strategies and request batching.",
   },
 ];
+
 const AllProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filters = [
     { id: "all", label: "All Projects" },
@@ -159,7 +270,7 @@ const AllProjectsPage = () => {
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50/30 to-slate-50">
       {/* Header */}
-      <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-slate-200 bg-white/80 backdrop-blur-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
           <a
             href="/"
@@ -207,9 +318,14 @@ const AllProjectsPage = () => {
           ))}
         </div>
 
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onClick={() => setSelectedProject(project)}
+            />
           ))}
         </div>
 
@@ -226,6 +342,11 @@ const AllProjectsPage = () => {
         )}
       </main>
 
+      <ProjectDetailModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
+
       {/* Footer */}
       <footer className="border-t border-slate-200 mt-24 py-10">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -239,5 +360,6 @@ const AllProjectsPage = () => {
     </div>
   );
 };
+
 
 export default AllProjectsPage;
