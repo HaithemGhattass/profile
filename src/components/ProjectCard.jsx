@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "./Icon";
 const ProjectCard = ({ project, onClick }) => (
   <div
     onClick={onClick}
@@ -7,11 +8,11 @@ const ProjectCard = ({ project, onClick }) => (
     <div className="p-8">
       <div className="flex items-start justify-between mb-4">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-600">
-          <span
-            className={`iconify text-${project.categoryColor}-500`}
-            data-icon={project.categoryIcon}
-            data-width="14"
-          ></span>
+          <Icon
+            icon={project.categoryIcon}
+            width="14"
+            className={`text-${project.categoryColor}-500`}
+          />
           {project.category}
         </div>
         {project.featured && (
@@ -48,11 +49,11 @@ const ProjectCard = ({ project, onClick }) => (
     </div>
 
     <div className="h-48 bg-slate-50 border-t border-slate-200 p-6 flex items-center justify-center group-hover:bg-slate-100 transition-colors">
-      <span
-        className="iconify text-slate-300"
-        data-icon={project.previewIcon}
-        data-width="64"
-      ></span>
+      <Icon
+        icon={project.previewIcon}
+        width="64"
+        className="text-slate-300"
+      />
     </div>
   </div>
 );

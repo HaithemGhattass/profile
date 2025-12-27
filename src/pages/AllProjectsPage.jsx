@@ -2,6 +2,7 @@ import { useState } from "react";
 import FilterButton from "../components/FilterButton";
 import ProjectCard from "../components/ProjectCard";
 import ProjectDetailModal from "./ProjectDetailModal";
+import jctLogo from '../components/icons/jctlogo.svg';
 
 
 
@@ -9,57 +10,57 @@ import ProjectDetailModal from "./ProjectDetailModal";
 const projectsData = [
   {
     id: 1,
-    title: "Analytics Pro",
-    category: "SaaS Dashboard",
+    title: "Comment Toolkit for Jira",
+    category: "Jira Plugin",
     categoryIcon: "lucide:layout-template",
     categoryColor: "blue",
     description:
-      "A real-time data visualization platform handling millions of events with WebSocket integration.",
-    tags: ["React", "TypeScript", "WebSocket", "D3.js"],
-    liveUrl: "#",
-    githubUrl: "#",
-    previewIcon: "lucide:bar-chart-3",
+      "organize and label Jira comments, leverage advanced filtering options and use JQL search to quickly find issues based on comment labels",
+    tags: ["React", "TypeScript", "Forge", "SQL"],
+    liveUrl: "https://marketplace.atlassian.com/apps/1235579/comment-toolkit-for-jira",
+    // githubUrl: "#",
+    previewIcon:  jctLogo,
     featured: true,
     filter: "web",
     timeline: "6 months",
-    role: "Lead Frontend Developer",
-    teamSize: "Team of 5",
+    role: "Lead FullStack Engineer",
+    teamSize: "Team of 2",
     features: [
-      "Real-time data streaming with WebSocket connections",
-      "Interactive charts and visualizations using D3.js",
-      "Custom dashboard builder with drag-and-drop",
-      "Advanced filtering and data export capabilities",
-      "Multi-tenant architecture with role-based access",
+      "Structured Comment Labeling",
+      "Centralized Label Governance",
+      "Comment-Level Filtering",
+      "Issue-Level Filtering via JQL",
+      "Automation & Workflow Integration",
     ],
     challenges:
-      "The main challenge was optimizing performance for real-time data updates. We implemented virtual scrolling and data chunking to handle millions of data points without compromising user experience. WebSocket reconnection logic was crucial for maintaining stable connections.",
+      "The main challenge was introducing semantic structure into Jira’s untyped comment system without impacting existing comment data or user workflows. This required preventing uncontrolled label creation, enforcing role-based permissions, and designing a scalable taxonomy model using label groups with project-level assignment. Additional complexity came from maintaining backward compatibility with legacy global labels, supporting non-destructive label lifecycle operations (archiving vs deletion), and enabling efficient comment-level filtering and JQL querying. The system also had to emit reliable webhook events to integrate with Jira Automation, transforming comment metadata into deterministic workflow triggers while preserving performance and data integrity at scale.",
   },
   {
     id: 2,
-    title: "E-commerce App",
-    category: "React Native",
+    title: "Morph for Confluence",
+    category: "Confluence Plugin",
     categoryIcon: "lucide:smartphone",
     categoryColor: "purple",
     description:
-      "Mobile application with complex gesture handling and smooth animations.",
-    tags: ["React Native", "Redux", "Stripe", "Firebase"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Morph automatically transforms unstructured text into clear, well-organized pages while giving users full preview and control over the final result.",
+    tags: ["React", "Forge", "Redux", "Python"],
+    liveUrl: "https://marketplace.atlassian.com/apps/1235238/morph-ai-powered-content-formatting-for-confluence",
+    // githubUrl: "#",
     previewIcon: "lucide:shopping-bag",
     featured: true,
-    filter: "mobile",
-    timeline: "4 months",
-    role: "Mobile Developer",
-    teamSize: "Team of 3",
+    filter: "web",
+    timeline: "6 months",
+    role: "Lead FullStack Engineer",
+    teamSize: "Team of 4",
     features: [
-      "Seamless checkout experience with Stripe integration",
-      "Product search with filters and recommendations",
-      "Push notifications for orders and promotions",
-      "Offline mode with local data persistence",
-      "Custom animations and gesture controls",
+      "AI-powered page formatting with one-click transformation",
+      "Generates structured, readable layouts from raw text and unformatted content",
+      "Preview-based workflow with side-by-side comparison before applying changes",
+      "Interactive prompting and retry mechanism to refine AI-generated results",
+      "Dedicated Rovo Agent for using Morph on Live Docs",
     ],
     challenges:
-      "Creating a smooth, native-feeling experience across iOS and Android was challenging. We spent significant time optimizing animations and implementing platform-specific features while maintaining code reusability.",
+      "The main challenge was transforming unstructured Confluence content into consistent, well-organized page structures while preserving context and page integrity. This required aligning AI-generated layouts with strict macro compatibility constraints, supporting partial and full-page transformations, and providing safe preview, retry, and rollback flows. Additional complexity came from handling insufficient context gracefully, maintaining deterministic user control over AI output, and ensuring seamless integration across classic pages and Live Docs without impacting performance or user trust.",
   },
   {
     id: 3,

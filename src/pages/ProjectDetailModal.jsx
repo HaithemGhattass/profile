@@ -1,4 +1,5 @@
 import React from "react"; 
+import Icon from "../components/Icon";
 
 const ProjectDetailModal = ({ project, onClose }) => {
   if (!project) return null;
@@ -10,11 +11,11 @@ const ProjectDetailModal = ({ project, onClose }) => {
         <div className="sticky top-0 bg-white border-b border-slate-200 px-8 py-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-medium text-slate-600">
-              <span
-                className={`iconify text-${project.categoryColor}-500`}
-                data-icon={project.categoryIcon}
-                data-width="14"
-              ></span>
+              <Icon
+                icon={project.categoryIcon}
+                width="14"
+                className={`text-${project.categoryColor}-500`}
+              />
               {project.category}
             </div>
             {project.featured && (
@@ -47,11 +48,11 @@ const ProjectDetailModal = ({ project, onClose }) => {
 
           {/* Preview Image Placeholder */}
           <div className="w-full h-80 bg-slate-50 rounded-2xl border border-slate-200 mb-8 flex items-center justify-center">
-            <span
-              className="iconify text-slate-300"
-              data-icon={project.previewIcon}
-              data-width="96"
-            ></span>
+            <Icon
+              icon={project.previewIcon}
+              width="96"
+              className="text-slate-300"
+            />
           </div>
 
           {/* Project Details */}
