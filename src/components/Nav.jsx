@@ -25,10 +25,10 @@ const Nav = () => {
             Work
           </a>
           <a
-            href="#stack"
+            href="#experience"
             className="px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-900 hover:bg-white rounded-full transition-all"
           >
-            Stack
+            Experience
           </a>
           <a
             href="#about"

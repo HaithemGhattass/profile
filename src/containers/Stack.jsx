@@ -14,9 +14,9 @@ const techStackData = [
 
 const Stack = () => {
   return (
-    <section id="stack" className="mb-32 scroll-mt-28">
+    <section id="experience" className="mb-32 scroll-mt-28">
       <h2 className="text-2xl font-semibold tracking-tight text-slate-900 mb-8">
-        Tech Stack
+        Experience
       </h2>
       
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
