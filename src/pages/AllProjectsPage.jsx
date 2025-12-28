@@ -11,8 +11,8 @@ const projectsData = [
   {
     id: 1,
     title: "Comment Toolkit for Jira",
-    category: "Jira Plugin",
-    categoryIcon: "lucide:layout-template",
+    category: "Productivity",
+    categoryIcon: "lucide:check-square",
     categoryColor: "blue",
     description:
       "organize and label Jira comments, leverage advanced filtering options and use JQL search to quickly find issues based on comment labels",
@@ -38,8 +38,8 @@ const projectsData = [
   {
     id: 2,
     title: "Morph for Confluence",
-    category: "Confluence Plugin",
-    categoryIcon: "lucide:smartphone",
+    category: "Content management",
+    categoryIcon: "lucide:file-text",
     categoryColor: "purple",
     description:
       "Morph automatically transforms unstructured text into clear, well-organized pages while giving users full preview and control over the final result.",
