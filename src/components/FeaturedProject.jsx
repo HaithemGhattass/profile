@@ -4,10 +4,10 @@ const FeaturedProject = () => (
   <div className="group relative md:col-span-2 h-100 bg-white rounded-3xl border border-slate-200 overflow-hidden hover:border-blue-200 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500">
     <div className="absolute top-8 left-8 z-10">
       <Badge icon="lucide:layout-template" color="blue">
-        Jira service management
+        Productivity
       </Badge>
       <h3 className="text-3xl font-semibold tracking-tight text-slate-900">
-        Analytics Pro
+        Jira comment toolkit
       </h3>
       <p className="text-slate-500 text-base mt-2 max-w-md">
         A real-time data visualization platform handling millions of events with
